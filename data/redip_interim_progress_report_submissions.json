@@ -1,0 +1,146 @@
+[
+  {
+    "form": {
+      "submissionId": "0fd767a1-6581-41e1-86a4-b29983830832",
+      "confirmationId": "0FD767A1",
+      "formName": "REDIP Interim Progress Report",
+      "version": 3,
+      "createdAt": "2023-10-18T16:07:03.394Z",
+      "fullName": "Jessica Sandhu",
+      "username": "JESSANDH",
+      "email": "jessica.sandhu@gov.bc.ca",
+      "status": "SUBMITTED",
+      "assignee": null,
+      "assigneeEmail": null
+    },
+    "lateEntry": false,
+    "signature": true,
+    "contactName": "Name",
+    "projectName": "Project Name Test",
+    "contactEmail": "test@gov.bca",
+    "contactPhone": "(123) 456-7490",
+    "projectNumber": 1234123,
+    "signatureDate": "2023-10-18T00:00:00-07:00",
+    "behindSchedule": "no",
+    "listOfOutcomes": "-one",
+    "changeInEndDate": "no",
+    "photosOfProject": [
+      {
+        "url": "/app/api/v1/files/2ee4e77c-ddd9-41e5-ab7a-168ba5a347a4",
+        "data": { "id": "2ee4e77c-ddd9-41e5-ab7a-168ba5a347a4" },
+        "size": 12026,
+        "storage": "chefs",
+        "originalName": "Test.docx"
+      }
+    ],
+    "deliverableTasks": [
+      {
+        "activityDeliverable": "one",
+        "anticipatedCompletionDate": "2023-10-19T00:00:00-07:00"
+      },
+      {
+        "activityDeliverable": "two",
+        "anticipatedCompletionDate": "2023-10-31T00:00:00-07:00"
+      }
+    ],
+    "organizationName": "RPP - Test",
+    "projectStartDate": "2023-06-04T00:00:00-07:00",
+    "expenditureReport": [
+      {
+        "totalClaim": 25000,
+        "paymentDate": "2023-10-31T00:00:00-07:00",
+        "supplierName": "Supplier 1",
+        "totalGSTPaid": 0,
+        "totalPSTPaid": 0,
+        "claimCategory": "Salaries",
+        "claimComments": "",
+        "invoiceNumber": "54321",
+        "taxRebateAmount": 0,
+        "claimDescription": "salaries",
+        "grossInvoiceAmount": 25000,
+        "goodsAndServicesWorkEndDate": "2023-10-31T00:00:00-07:00",
+        "goodsAndServicesWorkStartDate": "2023-07-11T00:00:00-07:00"
+      },
+      {
+        "totalClaim": 35000,
+        "paymentDate": "2023-10-31T00:00:00-07:00",
+        "supplierName": "Contractor 1",
+        "totalGSTPaid": 0,
+        "totalPSTPaid": 0,
+        "claimCategory": "Contractor",
+        "claimComments": "",
+        "invoiceNumber": "434324",
+        "taxRebateAmount": 0,
+        "claimDescription": "",
+        "grossInvoiceAmount": 35000,
+        "goodsAndServicesWorkEndDate": "2023-10-31T00:00:00-07:00",
+        "goodsAndServicesWorkStartDate": "2023-07-25T00:00:00-07:00"
+      }
+    ],
+    "hasContactChanged": "no",
+    "anticipatedEndDate": "2024-04-16T00:00:00-07:00",
+    "signatoryAuthority": "Test Signing",
+    "totalExpenseToDate": 60000,
+    "taskCompletedToDate": "-one \n-two\n-three",
+    "percentageOfTheProjectCompleted": 50
+  },
+  {
+    "form": {
+      "submissionId": "9ccd265b-4e35-452e-80c4-d5b063395724",
+      "confirmationId": "9CCD265B",
+      "formName": "REDIP Interim Progress Report",
+      "version": 2,
+      "createdAt": "2023-10-12T18:48:24.302Z",
+      "fullName": "Mizan Rahman",
+      "username": "MIRAHMAN",
+      "email": "mizan.rahman@gov.bc.ca",
+      "status": "SUBMITTED",
+      "assignee": null,
+      "assigneeEmail": null
+    },
+    "lateEntry": false,
+    "signature": true,
+    "contactName": "mizan rahman",
+    "totalToDate": 95,
+    "contactEmail": "mizan.rahman@gov.bc.ca",
+    "contactPhone": "(250) 811-1212",
+    "signatureDate": "2023-10-12T00:00:00-07:00",
+    "behindSchedule": "no",
+    "changeInEndDate": "yes",
+    "photosOfProject": [],
+    "deliverableTasks": [
+      {
+        "activityDeliverable": "take money",
+        "anticipatedCompletionDate": "2023-10-13T00:00:00-07:00"
+      },
+      {
+        "activityDeliverable": "make run",
+        "anticipatedCompletionDate": "2023-10-28T00:00:00-07:00"
+      }
+    ],
+    "organizationName": "Rural policy and programs",
+    "projectStartDate": "2023-10-12T00:00:00-07:00",
+    "expenditureReport": [
+      {
+        "totalClaim": 95,
+        "paymentDate": "2023-10-19T00:00:00-07:00",
+        "supplierName": "Cineplex",
+        "totalGSTPaid": 1,
+        "totalPSTPaid": 2,
+        "claimCategory": "Watching",
+        "claimComments": "bla vla",
+        "invoiceNumber": "2500s00d",
+        "taxRebateAmount": 5,
+        "claimDescription": "more text",
+        "grossInvoiceAmount": 100,
+        "goodsAndServicesWorkEndDate": "2023-10-27T00:00:00-07:00",
+        "goodsAndServicesWorkStartDate": "2023-10-13T00:00:00-07:00"
+      }
+    ],
+    "anticipatedEndDate": "2023-10-28T00:00:00-07:00",
+    "signatoryAuthority": "Mizan Rahman",
+    "listofTaskCompleted": "more te xt",
+    "percentageOfTheProjectCompleted": 25,
+    "pleaseProvideABulletListOfProjectWorksThatHaveBeenCompletedToDate": "text"
+  }
+]
