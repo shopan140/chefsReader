@@ -9,19 +9,60 @@
 library(testthat)
 library(chefsReader)
 
-test_check("chefsReader")
+output <- readRedipReport(jsonFile = "data//redip_reporting.json",
+                          outputFile = "data//output.xlsx")
 
-# Example usage:
-# Replace 'your_file_path.json' with the actual path to your JSON file
-# Replace c("key1", "key2") with the keys you want to flatten based on
-result <- flatten_json("data//fep_reporting.json", c("dataGrid"))
+# test_check("chefsReader")
+#
+# library(jsonlite)
+#
+#
+# dfJson <- jsonlite::fromJSON("data//redip_reporting.json", flatten = FALSE)
+#
+# df <- dfJson[1, ]
+# dataGridCol = c()
+# for(i in names(dfJson)){
+#   dataGridCol[i] <- !is.atomic(dfJson[1, i])
+# }
+#
+#
+# temp <- dfJson[, dataGridCol]
+#
+# df1 <- temp$form
+# df2 <- temp$deliverableTasks
+#
+# atomicColumn <- unlist(lapply(dfJson[1,], function(x) is.atomic(x)))
+#
+# df <- dfJson[, atomicColumn]
+#
+#
+# df <- readJson("data//redip_reporting.json", gridLevelKey = "deliverableTasks")
+#
+# temp <- organizeAtomic(dfJson)
+#
+#
+# temp1 <- organizeList(dfJson, "form")
+#
+# df <- dfJson$deliverableTasks
+#
+# data.frame(df[[1]])
+#
+# tt <- merge(temp,temp1)
+#
+#
+#
+# keyList <- temp1$confirmationId
+#
+# deliverable <- organizeList(dfJson$deliverableTasks, keyList = keyList)
+#
+# expenditureTable <- organizeList(dfJson$expenditureReport, keyList = keyList)
+#
+#
+# tt1 <- merge(tt, deliverable)
+#
+# tt3 <- merge(tt1, expenditureTable)
+#
+# debug(readRedipReport)
 
-library(jsonlite)
 
-df <- read_json("data//redip_interim_progress_report_submissions.json")
 
-names(df)
-
-data.frame(t(df[[1]][["form"]]))
-
-tabulize("form", df[[1]])

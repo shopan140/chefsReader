@@ -20,6 +20,29 @@ organizeDataGrid <- function(rowNumber, df, formLevelKey, gridLevelKey, idKey){
 }
 
 
+organizeJsonObj <- function(df, levelKey = "form"){
+  temp <- df[, levelKey]
+  atomicColumn <- unlist(lapply(temp[1,], function(x) is.atomic(x)))
+  temp[, atomicColumn]
+}
+
+organizeList <- function(dfList, keyList, idKey = "confirmationId"){
+
+  for(i in 1:length(keyList)){
+    dfList[[i]][, idKey] <- keyList[[i]]
+  }
+  dplyr::bind_rows(dfList)
+}
+organizeAtomic <- function(df, idKey = "confirmationId", idkeyLevel = "form"){
+
+  atomicColumn <- unlist(lapply(df[1,], function(x) is.atomic(x)))
+  temp <- df[, atomicColumn]
+  temp [, idKey] <- df[[idkeyLevel]][, idKey]
+  temp
+}
+
+
+
 
 
 #' A function that reads a JSON file and returns dataframe
@@ -88,4 +111,42 @@ tabulize <- function(name, x){
   }
 
   out
+}
+
+
+#' Title
+#'
+#' @param jsonFile file path for json
+#' @param outputFile file path for output excel.
+#' @param idKey unique id name
+#' @param formLevelKey form level key
+#' @param gridLevelKeys data grid level keys a vector
+#'
+#' @return a list of dataframe and write to excel file.
+#' @export
+#'
+#' @examples readRedipReport(jsonfile = "data//path.json", outputFile = "data//path.xlsx")
+readRedipReport <- function(jsonFile,
+                            outputFile,
+                            idKey = "confirmationId",
+                            formLevelKey = "form",
+                            gridLevelKeys = c("deliverableTasks",
+                                              "expenditureReport")) {
+  dfJson <- jsonlite::fromJSON(jsonFile, flatten = FALSE)
+
+  topLevelData <- organizeAtomic(dfJson, idKey = idKey, idkeyLevel = formLevelKey)
+  formLevelData <- organizeJsonObj(dfJson, levelKey = formLevelKey)
+
+  keyList <- formLevelData[, idKey, drop = TRUE]
+
+  tempList <- vector("list")
+  for (i in gridLevelKeys){
+    tempList[[i]] <- organizeList(dfJson[[i]], keyList = keyList)
+  }
+  tmp <- merge(formLevelData, topLevelData)
+  tempList$reportInfo <- tmp
+
+  writexl::write_xlsx(tempList, path = outputFile)
+  tempList
+
 }
